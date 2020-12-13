@@ -13,4 +13,4 @@ node {
 }
 ```
 
-<img src="https://github.com/ci-pipeline/jenkins/raw/master/etc/Jenkinsfile-managed_file.png" width="400px">
+<img src="https://github.com/ci-pipeline/jenkins/raw/master/etc/Jenkinsfile-managed_file.png" width="800px">
