@@ -1,6 +1,12 @@
 # Jenkins docker configuration
 
-After running the jenkins server, you need to add managed file as follows:
+Run using docker-compose as:
+```
+docker-compose -f docker-compose.yml up -d
+```
+
+After the server restarts, you need to add managed file as follows:
+
 `Manage Jenkins` > `Managed files` then add the following under file id `Jenkinsfile`
 
 ```groovy
