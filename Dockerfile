@@ -40,7 +40,9 @@ COPY --from=installer /jenkins.war /jenkins/jenkins.war
 COPY ./jenkins.install.UpgradeWizard.state ${JENKINS_HOME}/
 COPY ./scripts/ ${JENKINS_HOME}/init.groovy.d/
 COPY ./job-dsl-scripts/ ${JENKINS_HOME}/job-dsl-scripts/
+COPY ./casc_config.yaml ${JENKINS_HOME}/casc_config.yaml
 
 EXPOSE 8080
 ENTRYPOINT java -Duser.home=${JENKINS_HOME} -Dpermissive-script-security.enabled=true \
- 				-Djenkins.install.runSetupWizard=false -jar /jenkins/jenkins.war
+ 				-Djenkins.install.runSetupWizard=false -Dcasc.jenkins.config=${JENKINS_HOME}/casc_config.yaml \
+ 				-jar /jenkins/jenkins.war

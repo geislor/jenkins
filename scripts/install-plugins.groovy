@@ -13,7 +13,8 @@ pm.doCheckUpdatesServer()
  "ansicolor",
  "pipeline-utility-steps",
  "permissive-script-security",
- "job-dsl"
+ "job-dsl",
+ "configuration-as-code"
 ].each {
     if (!pm.getPlugin(it)) {
         deployment = uc.getPlugin(it).deploy(true)
