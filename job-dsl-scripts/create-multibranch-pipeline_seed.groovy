@@ -1,19 +1,9 @@
-repos = [
+seed_repos = [
         "https://github.com/ci-pipeline/example_multibranch"
 ]
 
-/*job("__seed") {
-
-    List<hudson.model.Item> allItems =
-            Jenkins.instance.getAllItems(jenkins.branch.MultiBranchProject.class)
-*/
-repos.each { repo ->
+seed_repos.each { repo ->
     def name = repo.split("/").last()
-
-    /*
-    if (allItems.find { name.equals(it.name) } != null) {
-        return
-    }*/
 
     multibranchPipelineJob(name) {
 
@@ -36,11 +26,3 @@ repos.each { repo ->
         }
     }
 }
-/*
-
-    triggers {
-        cron('* * * * *')
-    }
-}
-*/
-
