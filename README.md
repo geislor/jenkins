@@ -1,5 +1,7 @@
 # Jenkins docker configuration
 
+An jenkins instance preconfigured to run for https://github.com/ci-pipeline/ci-pipeline
+
 Build:
 ```
 docker build -t ci-pipeline/jenkins . 
