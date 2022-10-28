@@ -9,7 +9,7 @@ docker build -t ci-pipeline/jenkins .
 
 Run:
 ```
-docker run -p 80:8080 -v /opt/jenkins/data:/data -v /var/run/docker.sock:/var/run/docker.sock -d ci-pipeline/jenkins
+docker run -p 80:8080 -v /var/run/docker.sock:/var/run/docker.sock -d ci-pipeline/jenkins
 ```
 
 username/password: `ci-pipeline`/`ci-pipeline`
