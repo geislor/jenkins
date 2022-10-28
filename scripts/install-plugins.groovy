@@ -7,6 +7,7 @@ uc = Jenkins.instance.updateCenter
 pm.doCheckUpdatesServer()
 
 ["git",
+ "docker-workflow",
  "workflow-aggregator",
  "blueocean",
  "pipeline-multibranch-defaults",
