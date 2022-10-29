@@ -1,11 +1,15 @@
-seed_repos = [
-        "https://github.com/ci-pipeline/example_multibranch"
-]
+seed_repos = "${jm.envVars['GIT_REPOS']}".split(',')
 
 seed_repos.each { repo ->
-    def name = repo.split("/").takeRight(2)
 
-    multibranchPipelineJob(name.join("/")) {
+    repo = "${jm.envVars['GIT_BASEURL']}/$repo";
+
+    def name = repo.split("/").last()
+    def display = repo.split("/").takeRight(2).join('/')
+
+    multibranchPipelineJob(name) {
+
+        displayName(display.toString())
 
         branchSources {
             git {

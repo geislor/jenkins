@@ -9,6 +9,6 @@ def dslDir = new File("${env['JENKINS_HOME']}/job-dsl-scripts/")
 dslDir.eachFileMatch(FileType.ANY, ~/.*.groovy$/) { jobDslScript ->
     println "Applying ${jobDslScript.name}"
     def workspace = new File('.')
-    def jobManagement = new JenkinsJobManagement(System.out, [:], workspace)
+    def jobManagement = new JenkinsJobManagement(System.out, env, workspace)
     println new DslScriptLoader(jobManagement).runScript(jobDslScript.text)
 }

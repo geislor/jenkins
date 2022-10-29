@@ -8,10 +8,11 @@ import hudson.util.*;
 def instance = Jenkins.getInstance()
 
 def username = "ci-pipeline"
-def password = "ci-pipeline"
+def password = UUID.randomUUID().toString()
 
 def hudsonRealm = new HudsonPrivateSecurityRealm(false)
 hudsonRealm.createAccount(username, password)
+println("**************************** password: $password ****************************")
 instance.setSecurityRealm(hudsonRealm)
 
 def strategy = new FullControlOnceLoggedInAuthorizationStrategy()
