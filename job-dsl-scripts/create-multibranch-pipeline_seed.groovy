@@ -3,14 +3,15 @@ seed_repos = [
 ]
 
 seed_repos.each { repo ->
-    def name = repo.split("/").last()
+    def name = repo.split("/").takeRight(2)
 
-    multibranchPipelineJob(name) {
+    multibranchPipelineJob(name.join("/")) {
 
         branchSources {
             git {
                 id(UUID.randomUUID().toString())
                 remote(repo)
+                credentialsId("ci-pipeline-git")
             }
         }
 
