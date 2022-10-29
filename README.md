@@ -25,7 +25,7 @@ make build
 3. Optional: You might need to configure git credentials by creating a credentials by the id **"ci-pipeline-git"**
     see [using credentials](https://www.jenkins.io/doc/book/using/using-credentials/)
    
-    <img src="https://github.com/ci-pipeline/jenknins/raw/master/etc/git_cred.png"  width="700px"/>
+    <img src="https://github.com/ci-pipeline/jenkins/raw/master/etc/git_cred.png"  width="700px"/>
 
 4. Now go into each Jenkins repo and click *Scan Multibranch Pipeline Log* on the left 
 
