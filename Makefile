@@ -1,5 +1,5 @@
 build:
-	docker build -t ci-pipeline/jenkins.
+	docker build -t ci-pipeline/jenkins .
 
 deploy:
 	docker image push ci-pipeline/jenkins
