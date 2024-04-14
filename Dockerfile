@@ -1,4 +1,4 @@
-FROM alpine:3.11 AS installer
+FROM alpine:3.16.9 AS installer
 
 ARG JENKINS_VERSION="latest"
 
@@ -7,7 +7,7 @@ RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/co
 RUN curl -SL -o jenkins.war http://mirrors.jenkins.io/war-stable/$JENKINS_VERSION/jenkins.war
 
 # Jenkins
-FROM alpine:3.11
+FROM alpine:3.16.9
 
 # jenkins deps
 RUN apk add --no-cache \
